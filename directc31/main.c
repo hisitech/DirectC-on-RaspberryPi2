@@ -18,8 +18,8 @@ int jtck_gpio,jtdi_gpio,jtms_gpio,jtdo_gpio;
 
 struct shared_use_st
 {
-  int op_keyin;         // ×÷ÎªÒ»¸ö±êÖ¾£¬¸¸×Ó½ø³Ì¾ù¿É¶ÁĞ´
-  char action_state[8]; // ¸¸½ø³Ì¶Á£¬×Ó½ø³ÌĞ´
+  int op_keyin;         // ä½œä¸ºä¸€ä¸ªæ ‡å¿—ï¼Œçˆ¶å­è¿›ç¨‹å‡å¯è¯»å†™
+  char action_state[8]; // çˆ¶è¿›ç¨‹è¯»ï¼Œå­è¿›ç¨‹å†™
 };
 
 unsigned char *data_buffer = NULL;
@@ -33,21 +33,21 @@ int main(int argc,char *argv[])
 	struct shared_use_st *shared = NULL;
 
 	int shmid;
-	//´´½¨¹²ÏíÄÚ´æ
+	//åˆ›å»ºå…±äº«å†…å­˜
 	shmid = shmget((key_t)1234, sizeof(struct shared_use_st), 0666|IPC_CREAT);
 	if( shmid == -1 )
 	{
 		printf("shmget failed\n");
 		return -1;
 	}
-	//½«¹²ÏíÄÚ´æÁ¬½Óµ½µ±Ç°½ø³ÌµÄµØÖ·¿Õ¼ä
+	//å°†å…±äº«å†…å­˜è¿æ¥åˆ°å½“å‰è¿›ç¨‹çš„åœ°å€ç©ºé—´
 	shm = shmat(shmid, (void*)0, 0);
 	if( shm == (void*)-1 )
 	{
 		printf("shmat failed\n");
 		return -1;
 	}
-	//ÉèÖÃ¹²ÏíÄÚ´æ
+	//è®¾ç½®å…±äº«å†…å­˜
 	shared = (struct shared_use_st*)shm;
 
 	if( argc != 4 )
@@ -71,34 +71,34 @@ int main(int argc,char *argv[])
 			jtdo_gpio = 25;
 			break;
 		case 2:
-			jtck_gpio = 22;
-			jtdi_gpio = 23;
-			jtms_gpio = 24;
-			jtdo_gpio = 25;
+			jtck_gpio = 26;
+			jtdi_gpio = 27;
+			jtms_gpio = 28;
+			jtdo_gpio = 29;
 			break;
 		case 3:
-			jtck_gpio = 22;
-			jtdi_gpio = 23;
-			jtms_gpio = 24;
-			jtdo_gpio = 25;
+			jtck_gpio = 6;
+			jtdi_gpio = 10;
+			jtms_gpio = 11;
+			jtdo_gpio = 31;
 			break;
 		case 4:
-			jtck_gpio = 22;
-			jtdi_gpio = 23;
-			jtms_gpio = 24;
-			jtdo_gpio = 25;
+			jtck_gpio = 0;
+			jtdi_gpio = 2;
+			jtms_gpio = 3;
+			jtdo_gpio = 21;
 			break;
 		case 5:
-			jtck_gpio = 22;
-			jtdi_gpio = 23;
-			jtms_gpio = 24;
-			jtdo_gpio = 25;
+			jtck_gpio = 7;
+			jtdi_gpio = 1;
+			jtms_gpio = 4;
+			jtdo_gpio = 5;
 			break;
 		case 6:
-			jtck_gpio = 22;
-			jtdi_gpio = 23;
-			jtms_gpio = 24;
-			jtdo_gpio = 25;
+			jtck_gpio = 8;
+			jtdi_gpio = 12;
+			jtms_gpio = 13;
+			jtdo_gpio = 14;
 			break;
 		default:
 			jtck_gpio = 22;
