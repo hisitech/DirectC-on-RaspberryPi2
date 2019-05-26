@@ -1,17 +1,31 @@
 DirectC-on-RaspberryPi2
 
+
 JTAG interface:
-  Chips 1:
-    jtck GPIO-22
-    jtdi GPIO-23
-    jtms GPIO-24
-    jtdo GPIO-25
-  Chips 2:
-    jtck GPIO-26
-    jtdi GPIO-27
-    jtms GPIO-28
-    jtdo GPIO-29
-  Chips 3:
+
+ Chips 1:
+
+jtck GPIO-22
+
+jtdi GPIO-23
+
+jtms GPIO-24
+
+jtdo GPIO-25
+
+
+Chips 2:
+
+jtck GPIO-26
+
+jtdi GPIO-27
+
+jtms GPIO-28
+
+jtdo GPIO-29
+
+
+Chips 3:
     jtck GPIO-6
     jtdi GPIO-10
     jtms GPIO-11
